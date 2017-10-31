@@ -5,6 +5,7 @@
   "extends": "airbnb-base",
   "rules": {
     "semi": ["error", "never"],
-    "no-console": "off"
+    "no-console": "off",
+    "object-curly-newline": "off"
   }
 }

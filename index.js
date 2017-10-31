@@ -1,5 +1,7 @@
 const express = require('express')
 const qs = require('qs')
+const bodyParser = require('body-parser')
+
 const questions = require('./data/questions.json')
 
 const app = express()
@@ -14,15 +16,20 @@ const buildImageUrl = location => `https://maps.googleapis.com/maps/api/staticma
 
 app.set('port', (process.env.PORT || 8080))
 app.use(express.static('public'))
+app.use(bodyParser.urlencoded({ extended: false }))
 
 app.set('views', 'views')
 app.set('view engine', 'ejs')
 
 app.get('/', (req, res) => {
-  const { location, clue, question } = questions.default
+  const { id, location, clue, question } = questions.default
   const image = buildImageUrl(location)
 
-  res.render('index', { clue, question, image })
+  res.render('index', { id, clue, question, image })
+})
+
+app.post('/', (req, res) => {
+  res.json(req.body)
 })
 
 app.listen(app.get('port'), () => {

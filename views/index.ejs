@@ -18,10 +18,11 @@
         </p>
       </div>
       <div class="lower">
-        <form class="form">
+        <form class="form" method="post">
           <div class="field-group">
             <div class="field">
-              <input class="text-input" type="text" id="answer" placeholder="Your answer..." />
+              <input name="question" type="hidden" value="<%= id %>">
+              <input class="text-input" type="text" name="answer" placeholder="Your answer..." />
             </div>
             <div>
               <button class="button" type="submit">Go</button>
