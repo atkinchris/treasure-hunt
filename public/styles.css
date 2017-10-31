@@ -42,12 +42,13 @@ body,
 
 .upper {
   color: #FFFFFF;
-  background: #00B4FF;
+  background-color: #00B4FF;
+  background-size: cover;
   flex: 1;
 }
 
 .highlight {
-  background: #00B4FF;
+  background: #515151;
   padding: 0.2em;
   display: inline-block;
 }

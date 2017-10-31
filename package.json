@@ -5,7 +5,8 @@
   },
   "dependencies": {
     "ejs": "^2.5.7",
-    "express": "^4.16.2"
+    "express": "^4.16.2",
+    "qs": "^6.5.1"
   },
   "devDependencies": {
     "eslint": "^4.10.0",
