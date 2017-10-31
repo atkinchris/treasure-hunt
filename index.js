@@ -1,5 +1,6 @@
 const express = require('express')
 const qs = require('qs')
+const questions = require('./data/questions.json')
 
 const app = express()
 const buildImageUrl = location => `https://maps.googleapis.com/maps/api/staticmap?${qs.stringify({
@@ -17,14 +18,10 @@ app.set('views', 'views')
 app.set('view engine', 'ejs')
 
 app.get('/', (req, res) => {
-  const center = 'Manchester Library, UK'
-  const image = buildImageUrl(center)
+  const { location, clue, question } = questions.default
+  const image = buildImageUrl(location)
 
-  res.render('index', {
-    clue: 'Dickens, PR4560.A1',
-    question: 'P141, L07, W03',
-    image,
-  })
+  res.render('index', { clue, question, image })
 })
 
 app.listen(app.get('port'), () => {

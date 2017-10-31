@@ -4,6 +4,10 @@
     "start": "node index.js",
     "dev": "nodemon index.js"
   },
+  "engines": {
+    "node": ">=8",
+    "yarn": ">=1"
+  },
   "dependencies": {
     "ejs": "^2.5.7",
     "express": "^4.16.2",
