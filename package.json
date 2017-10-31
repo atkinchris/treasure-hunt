@@ -1,0 +1,15 @@
+{
+  "private": true,
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "ejs": "^2.5.7",
+    "express": "^4.16.2"
+  },
+  "devDependencies": {
+    "eslint": "^4.10.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0"
+  }
+}
