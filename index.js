@@ -9,6 +9,7 @@ const buildImageUrl = location => `https://maps.googleapis.com/maps/api/staticma
   scale: 2,
   style: 'style=feature:all|element:labels|visibility:off',
   size: '180x180',
+  key: 'AIzaSyCeRXyZCLeZq2JVoxL1nHn5jzIuMajxwT0',
 })}`
 
 app.set('port', (process.env.PORT || 8080))
