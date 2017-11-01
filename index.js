@@ -39,14 +39,17 @@ app.post('/', (req, res) => {
 
 app.get('/:questionId', (req, res) => {
   const { questionId } = req.params
-  const { id, location, clue, question } = questions[normalise(questionId)]
+  const { location, clue, question } = questions[normalise(questionId)]
   const image = buildImageUrl(location)
 
-  res.render('index', { id, clue, question, image })
+  res.render('index', { clue, question, image })
 })
 
 app.post('/:questionId', (req, res) => {
-  res.json(req.body)
+  res.json({
+    question: req.params.questionId,
+    body: req.body,
+  })
 })
 
 app.listen(app.get('port'), () => {
