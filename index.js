@@ -4,6 +4,7 @@ const bodyParser = require('body-parser')
 const compression = require('compression')
 
 const questions = require('./data/questions.json')
+const teams = require('./data/teams.json')
 
 const app = express()
 const buildImageUrl = location => `https://maps.googleapis.com/maps/api/staticmap?${qs.stringify({
@@ -24,13 +25,26 @@ app.set('views', 'views')
 app.set('view engine', 'ejs')
 
 app.get('/', (req, res) => {
-  const { id, location, clue, question } = questions.default
+  res.render('startpage')
+})
+
+app.post('/', (req, res) => {
+  const { teamId } = req.body
+  const team = teams[teamId]
+  const destination = !team ? '/' : `/${team.firstQuestion}`
+
+  res.redirect(destination)
+})
+
+app.get('/:questionId', (req, res) => {
+  const { questionId } = req.params
+  const { id, location, clue, question } = questions[questionId]
   const image = buildImageUrl(location)
 
   res.render('index', { id, clue, question, image })
 })
 
-app.post('/', (req, res) => {
+app.post('/:questionId', (req, res) => {
   res.json(req.body)
 })
 
