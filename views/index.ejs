@@ -1,35 +1,25 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Treasure Hunt</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <div class="container flex padded">
-    <div class="card flex">
-      <div class="upper padded" style="background-image: url('<%= image %>')">
-        <h1>
-          <span class="highlight"><%= clue %></span>
-        </h1>
-        <p>
-          <span class="highlight"><%= question %></span>
-        </p>
-      </div>
-      <div class="lower padded">
-        <form class="form" method="post">
-          <div class="field-group">
-            <div class="field">
-              <input name="question" type="hidden" value="<%= id %>">
-              <input class="text-input" type="text" name="answer" placeholder="Your answer..." />
-            </div>
-            <div>
-              <button class="button" type="submit">Go</button>
-            </div>
-          </div>
-        </form>
-      </div>
-    </div>
+<% include ./partials/header.ejs %>
+<div class="card flex">
+  <div class="upper padded" style="background-image: url('<%= image %>')">
+    <h1>
+      <span class="highlight"><%= clue %></span>
+    </h1>
+    <p>
+      <span class="highlight"><%= question %></span>
+    </p>
   </div>
-</body>
-</html>
+  <div class="lower padded">
+    <form method="post">
+      <div class="field-group">
+        <div class="field">
+          <input name="question" type="hidden" value="<%= id %>">
+          <input class="text-input" type="text" name="answer" placeholder="Your answer..." />
+        </div>
+        <div>
+          <button class="button" type="submit">Go</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<% include ./partials/footer.ejs %>

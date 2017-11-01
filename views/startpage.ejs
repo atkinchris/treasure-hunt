@@ -1,4 +1,17 @@
-<form method="post">
-  <input type="text" name="teamId" />
-  <button type="submit">Submit</button>
-</form>
+<% include ./partials/header.ejs %>
+<div class="card flex">
+  <div class="padded">
+    <h1>Enter your team name</h1>
+    <form method="post">
+        <div class="field-group">
+          <div class="field">
+            <input class="text-input" type="text" name="teamId" placeholder="..."/>
+          </div>
+          <div>
+            <button class="button" type="submit">Go</button>
+          </div>
+        </div>
+    </form>
+  </div>
+</div>
+<% include ./partials/footer.ejs %>
