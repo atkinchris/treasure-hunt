@@ -7,6 +7,7 @@ const questions = require('./data/questions.json')
 const teams = require('./data/teams.json')
 
 const app = express()
+const normalise = text => String(text).toLowerCase().replace(/[^a-z0-9]/g, '')
 const buildImageUrl = location => `https://maps.googleapis.com/maps/api/staticmap?${qs.stringify({
   center: location,
   zoom: 16,
@@ -30,7 +31,7 @@ app.get('/', (req, res) => {
 
 app.post('/', (req, res) => {
   const { teamId } = req.body
-  const team = teams[teamId]
+  const team = teams[normalise(teamId)]
   const destination = !team ? '/' : `/${team.firstQuestion}`
 
   res.redirect(destination)
@@ -38,7 +39,7 @@ app.post('/', (req, res) => {
 
 app.get('/:questionId', (req, res) => {
   const { questionId } = req.params
-  const { id, location, clue, question } = questions[questionId]
+  const { id, location, clue, question } = questions[normalise(questionId)]
   const image = buildImageUrl(location)
 
   res.render('index', { id, clue, question, image })
