@@ -13,14 +13,11 @@ body,
   box-sizing: border-box;
 }
 
-.container,
-.lower,
-.upper {
+.padded {
   padding: 2em;
 }
 
-.container,
-.card {
+.flex {
   display: flex;
   flex-direction: column;
   justify-content: center;

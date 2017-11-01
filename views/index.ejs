@@ -7,9 +7,9 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="container">
-    <div class="card">
-      <div class="upper" style="background-image: url('<%= image %>')">
+  <div class="container flex padded">
+    <div class="card flex">
+      <div class="upper padded" style="background-image: url('<%= image %>')">
         <h1>
           <span class="highlight"><%= clue %></span>
         </h1>
@@ -17,7 +17,7 @@
           <span class="highlight"><%= question %></span>
         </p>
       </div>
-      <div class="lower">
+      <div class="lower padded">
         <form class="form" method="post">
           <div class="field-group">
             <div class="field">
