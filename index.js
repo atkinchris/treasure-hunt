@@ -1,6 +1,7 @@
 const express = require('express')
 const qs = require('qs')
 const bodyParser = require('body-parser')
+const compression = require('compression')
 
 const questions = require('./data/questions.json')
 
@@ -15,6 +16,7 @@ const buildImageUrl = location => `https://maps.googleapis.com/maps/api/staticma
 })}`
 
 app.set('port', (process.env.PORT || 8080))
+app.use(compression())
 app.use(express.static('public'))
 app.use(bodyParser.urlencoded({ extended: false }))
 

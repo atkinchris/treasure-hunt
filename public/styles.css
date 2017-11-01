@@ -6,7 +6,7 @@ body,
   margin: 0;
   padding: 0;
   background: #E8E8E8;
-  font-family: 'Lato', sans-serif;
+  font-family: sans-serif;
 }
 
 * {
@@ -38,14 +38,14 @@ body,
 }
 
 .upper {
-  color: #FFFFFF;
-  background-color: #00B4FF;
+  background: #D6D6D6;
   background-size: cover;
   flex: 1;
 }
 
 .highlight {
   background: #515151;
+  color: #FFFFFF;
   padding: 0.2em;
   display: inline-block;
 }
