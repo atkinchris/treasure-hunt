@@ -14,5 +14,9 @@
   "ripley": {
     "id": "Team Ripley",
     "firstQuestion": "default"
+  },
+  "walter": {
+    "id": "Team Walter",
+    "firstQuestion": "default"
   }
 }
