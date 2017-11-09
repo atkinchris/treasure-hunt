@@ -1,24 +1,9 @@
 {
   "private": true,
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js"
-  },
-  "engines": {
-    "node": ">=8",
-    "yarn": ">=1"
+    "render": "generate-md --layout github --input README.md --no-header-links"
   },
   "dependencies": {
-    "body-parser": "^1.18.2",
-    "compression": "^1.7.1",
-    "ejs": "^2.5.7",
-    "express": "^4.16.2",
-    "qs": "^6.5.1"
-  },
-  "devDependencies": {
-    "eslint": "^4.10.0",
-    "eslint-config-airbnb-base": "^12.1.0",
-    "eslint-plugin-import": "^2.8.0",
-    "nodemon": "^1.12.1"
+    "markdown-styles": "^3.1.10"
   }
 }
