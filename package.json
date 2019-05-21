@@ -1,9 +1,17 @@
 {
   "private": true,
   "scripts": {
-    "render": "generate-md --layout github --input README.md --no-header-links"
+    "render": "generate-md --layout github --input README.md --no-header-links",
+    "map": "http-server map"
   },
   "dependencies": {
+    "http-server": "^0.11.1",
     "markdown-styles": "^3.1.10"
+  },
+  "prettier": {
+    "printWidth": 120,
+    "semi": false,
+    "singleQuote": true,
+    "trailingComma": "es5"
   }
 }
